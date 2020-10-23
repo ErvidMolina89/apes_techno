@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home_movies"
-        android:name="com.example.apes_techno.Presentations.Fragments.FragmentHomeMovies.FragmentHomeMovies"
+        android:name="com.example.apes_techno.Presentations.Fragments.FragmentHomeMovies.Implementations.FragmentHomeMovies"
         android:label="@string/title_home_movies"
         tools:layout="@layout/fragment_home_movies" >
         <action

@@ -8,9 +8,10 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.example.apes_techno.Base.BaseFragment
 import com.example.apes_techno.R
 
-class DetailsMovieFragment : Fragment() {
+class DetailsMovieFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
