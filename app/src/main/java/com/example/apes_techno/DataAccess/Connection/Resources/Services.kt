@@ -6,8 +6,8 @@ enum class Services (url : String,
                      method : IServiceParameters.Methods)
     : IServiceParameters {
 
-    get_list_movies("movies/",IServiceParameters.Methods.GET),
-    get_movie("movies/?filter=",IServiceParameters.Methods.GET)
+    get_list_movies("movies/?",IServiceParameters.Methods.GET),
+    get_movie("movies/?filter=id:",IServiceParameters.Methods.GET)
     ;
 
     private val url : String

@@ -7,13 +7,20 @@
     <string name="title_home_movies">Peliculas Populares</string>
     <string name="name">Name</string>
     <string name="date">Date</string>
-    <string name="runtime">runtime</string>
+    <string name="runtime">Runtime</string>
     <string name="descripcion">Descripción</string>
-    <string name="api_key">"?api_key=b6bd313da96a3c6ceddae3afe0253db9685ddf9e&amp;format=json"</string>
+    <string name="api_key">"api_key=b6bd313da96a3c6ceddae3afe0253db9685ddf9e&amp;format=json"</string>
     <string name="Internet">Internet</string>
     <string name="detail_falla_Internet">No tienes acceso a Internet, verifica</string>
     <string name="btn_aceptar">Aceptar</string>
     <string name="btn_cancel">Cancelar</string>
     <string name="informative">Informativo</string>
     <string name="detail_diaolog">Detalle de Dialogo</string>
+    <string name="rating">Rating</string>
+    <string name="budget">Budget</string>
+    <string name="boxOR">Box Office Revenue</string>
+    <string name="TotalGR">Total Gross Revenue</string>
+    <string name="producers">Producer(s)</string>
+    <string name="writer">Writer(s)</string>
+    <string name="studio">Studio(s)</string>
 </resources>

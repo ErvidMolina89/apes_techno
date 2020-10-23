@@ -12,14 +12,19 @@
         tools:layout="@layout/fragment_home_movies" >
         <action
             android:id="@+id/action_detail_movie"
-            app:destination="@id/navigation_detail_movie"
-            />
+            app:destination="@id/navigation_detail_movie">
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/navigation_detail_movie"
-        android:name="com.example.apes_techno.Presentations.Fragments.FragmentDetails.DetailsMovieFragment"
+        android:name="com.example.apes_techno.Presentations.Fragments.FragmentDetails.Implementations.DetailsMovieFragment"
         android:label="@string/title_detail"
-        tools:layout="@layout/fragment_detail_movie" />
+        tools:layout="@layout/fragment_detail_movie" >
+        <argument
+            android:name="id_movie"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 
 </navigation>

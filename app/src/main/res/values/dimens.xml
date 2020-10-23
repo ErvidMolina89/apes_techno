@@ -11,4 +11,5 @@
     <dimen name="dimen_20dp">20dp</dimen>
     <dimen name="icono_50dp">50dp</dimen>
     <dimen name="dimen_16dp">16dp</dimen>
+    <dimen name="dimen_150dp">150dp</dimen>
 </resources>

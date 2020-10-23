@@ -68,8 +68,9 @@ class ViewItemListMovies @JvmOverloads constructor(
     @SuppressLint("SetTextI18n")
     private fun updateLabels() {
         try {
+            val date = item!!.release_date?.split(" ")
             nameMovie?.setText(item!!.name)
-            dateMovie?.setText(item!!.release_date)
+            dateMovie?.setText(date!![0])
             runtimeMovie?.setText(item!!.runtime)
         }catch (e: Exception){
 

@@ -18,6 +18,8 @@ import com.example.apes_techno.Presentations.Fragments.FragmentHomeMovies.Interf
 import com.example.apes_techno.Presentations.Fragments.FragmentHomeMovies.Interfaces.IFragmentHomeMoviesView
 import com.example.apes_techno.R
 import com.example.apes_techno.Util.DialogueGenerico
+import com.example.apes_techno.Util.hiddenProgress
+import com.example.apes_techno.Util.showProgress
 
 class FragmentHomeMovies : BaseFragment() {
 
@@ -42,6 +44,7 @@ class FragmentHomeMovies : BaseFragment() {
             Movies(), object :
             IRetrofitParcelable {},
             Services.get_list_movies)
+        context?.showProgress()
     }
 
     fun callService(objectResponse: BaseModel,
@@ -51,20 +54,19 @@ class FragmentHomeMovies : BaseFragment() {
         presenter?.callService(objectResponse, objectSend, service)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
     private fun visualizarList(list: MutableList<Movie>){
+        context?.hiddenProgress()
         rv_movies_list
             ?.conVisualizeListMovies(list)
             ?.conListenerMovieList {
-                    findNavController().navigate(R.id.action_detail_movie)
+                val direction = FragmentHomeMoviesDirections.actionDetailMovie(it.id!!)
+                findNavController().navigate(direction)
             }
     }
 
     inner class actionViewPresenter: IFragmentHomeMoviesView {
         override fun failureService(response: MessageResponse) {
+            context?.hiddenProgress()
             dialogueFragment(response.Code.toString(), response.Message!!, DialogueGenerico.TypeDialogue.ERROR)
         }
 
