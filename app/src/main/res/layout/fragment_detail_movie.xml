@@ -1,388 +1,373 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ScrollView
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        android:orientation="vertical"
+        android:layout_height="2000dp">
 
-                <ImageView
-                    android:id="@+id/iv_detail_movie"
-                    android:layout_width="@dimen/dimen_150dp"
-                    android:layout_height="@dimen/dimen_150dp"
-                    android:layout_marginStart="@dimen/dimen_8dp"
-                    android:layout_marginTop="@dimen/dimen_8dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_detail_movie"
+                android:layout_width="@dimen/dimen_150dp"
+                android:layout_height="@dimen/dimen_150dp"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_4dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:layout_marginEnd="@dimen/dimen_8dp"
+                android:text="@string/name"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/ll_date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_detail_movie"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/ll_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_4dp"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:layout_marginEnd="@dimen/dimen_8dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/ll_rating"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_detail_movie"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name_detail">
 
                 <TextView
-                    android:id="@+id/tv_name_detail"
+                    android:id="@+id/tv_name_date_detail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_4dp"
-                    android:layout_marginTop="@dimen/dimen_8dp"
-                    android:layout_marginEnd="@dimen/dimen_8dp"
+                    android:layout_weight="1"
+                    android:text="@string/date"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_date_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dimen_2dp"
+                    android:layout_weight="2"
                     android:text="@string/name"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/ll_date"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/iv_detail_movie"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/ll_date"
+            <LinearLayout
+                android:id="@+id/ll_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_4dp"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:layout_marginEnd="@dimen/dimen_8dp"
+                app:layout_constraintBottom_toTopOf="@+id/ll_runtime"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_detail_movie"
+                app:layout_constraintTop_toBottomOf="@+id/ll_date">
+
+                <TextView
+                    android:id="@+id/tv_name_rating_detail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_4dp"
-                    android:layout_marginTop="@dimen/dimen_4dp"
-                    android:layout_marginEnd="@dimen/dimen_8dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toTopOf="@+id/ll_rating"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/iv_detail_movie"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_name_detail">
+                    android:layout_weight="1"
+                    android:text="@string/rating"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/tv_name_date_detail"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/date"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tv_date_detail"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/dimen_2dp"
-                        android:layout_weight="2"
-                        android:text="@string/name"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ll_rating"
+                <TextView
+                    android:id="@+id/tv_rating_detail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_4dp"
-                    android:layout_marginTop="@dimen/dimen_4dp"
-                    android:layout_marginEnd="@dimen/dimen_8dp"
-                    app:layout_constraintBottom_toTopOf="@+id/ll_runtime"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/iv_detail_movie"
-                    app:layout_constraintTop_toBottomOf="@+id/ll_date">
+                    android:layout_marginStart="@dimen/dimen_2dp"
+                    android:layout_weight="2"
+                    android:text="@string/name"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/tv_name_rating_detail"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/rating"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/tv_rating_detail"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dimen_2dp"
-                        android:layout_weight="2"
-                        android:text="@string/name"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+            <LinearLayout
+                android:id="@+id/ll_runtime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_4dp"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:layout_marginEnd="@dimen/dimen_8dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@+id/ll_budget"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_detail_movie"
+                app:layout_constraintTop_toBottomOf="@+id/ll_rating">
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ll_runtime"
+                <TextView
+                    android:id="@+id/tv_name_runtime_detail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_4dp"
-                    android:layout_marginTop="@dimen/dimen_4dp"
-                    android:layout_marginEnd="@dimen/dimen_8dp"
-                    android:gravity="center"
-                    app:layout_constraintBottom_toTopOf="@+id/ll_budget"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/iv_detail_movie"
-                    app:layout_constraintTop_toBottomOf="@+id/ll_rating">
+                    android:layout_weight="1"
+                    android:text="@string/runtime"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/tv_name_runtime_detail"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/runtime"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tv_runtime_detail"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dimen_2dp"
-                        android:layout_weight="2"
-                        android:text="@string/name"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/ll_budget"
+                <TextView
+                    android:id="@+id/tv_runtime_detail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_4dp"
-                    android:layout_marginTop="@dimen/dimen_4dp"
-                    android:layout_marginEnd="@dimen/dimen_8dp"
-                    android:gravity="center"
-                    app:layout_constraintBottom_toBottomOf="@+id/iv_detail_movie"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/iv_detail_movie"
-                    app:layout_constraintTop_toBottomOf="@+id/ll_runtime">
+                    android:layout_marginStart="@dimen/dimen_2dp"
+                    android:layout_weight="2"
+                    android:text="@string/name"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/tv_name_budget_detail"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/budget"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/tv_budget_detail"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dimen_2dp"
-                        android:layout_weight="2"
-                        android:text="@string/name"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+            <LinearLayout
+                android:id="@+id/ll_budget"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_4dp"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:layout_marginEnd="@dimen/dimen_8dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_detail_movie"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_detail_movie"
+                app:layout_constraintTop_toBottomOf="@+id/ll_runtime">
 
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/tv_name_budget_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/budget"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_budget_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_2dp"
+                    android:layout_weight="2"
+                    android:text="@string/name"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_description_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_4dp"
+            android:text="@string/boxOR"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_boxOR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:gravity="center">
 
             <TextView
-                android:id="@+id/tv_description_detail"
-                android:layout_width="match_parent"
+                android:id="@+id/tv_name_boxOR_detail"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_8dp"
-                android:layout_marginTop="@dimen/dimen_8dp"
-                android:layout_marginEnd="@dimen/dimen_8dp"
-                android:layout_marginBottom="@dimen/dimen_4dp"
+                android:layout_weight="1"
                 android:text="@string/boxOR"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp"/>
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-            <LinearLayout
-                android:id="@+id/ll_boxOR"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_boxOR_detail"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_8dp"
-                android:layout_marginTop="@dimen/dimen_4dp"
-                android:layout_marginEnd="@dimen/dimen_8dp"
-                android:gravity="center"
-                app:layout_constraintBottom_toTopOf="@+id/ll_TotalGR"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_description_detail">
+                android:layout_marginStart="@dimen/dimen_2dp"
+                android:layout_weight="2"
+                android:text="@string/name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tv_name_boxOR_detail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/boxOR"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tv_boxOR_detail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_2dp"
-                    android:layout_weight="2"
-                    android:text="@string/name"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/ll_TotalGR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:gravity="center">
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_TotalGR"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_name_TotalGR_detail"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_8dp"
-                android:layout_marginTop="@dimen/dimen_4dp"
-                android:layout_marginEnd="@dimen/dimen_8dp"
-                android:gravity="center"
-                app:layout_constraintBottom_toTopOf="@+id/ll_producers"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll_boxOR">
+                android:layout_weight="1"
+                android:text="@string/TotalGR"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tv_name_TotalGR_detail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/TotalGR"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_TotalGR_detail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_2dp"
-                    android:layout_weight="2"
-                    android:text="@string/name"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_producers"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_TotalGR_detail"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_8dp"
-                android:layout_marginTop="@dimen/dimen_4dp"
-                android:layout_marginEnd="@dimen/dimen_8dp"
-                android:gravity="center"
-                app:layout_constraintBottom_toTopOf="@+id/ll_writer"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll_TotalGR">
+                android:layout_marginStart="@dimen/dimen_2dp"
+                android:layout_weight="2"
+                android:text="@string/name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tv_name_producers_detail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/producers"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tv_producers_detail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_2dp"
-                    android:layout_weight="2"
-                    android:text="@string/name"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/ll_producers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:gravity="center">
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_writer"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_name_producers_detail"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_8dp"
-                android:layout_marginTop="@dimen/dimen_4dp"
-                android:layout_marginEnd="@dimen/dimen_8dp"
-                android:gravity="center"
-                app:layout_constraintBottom_toTopOf="@+id/ll_studio"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll_producers">
+                android:layout_weight="1"
+                android:text="@string/producers"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tv_name_writer_detail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/writer"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_writer_detail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_2dp"
-                    android:layout_weight="2"
-                    android:text="@string/name"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_studio"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_producers_detail"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_8dp"
-                android:layout_marginTop="@dimen/dimen_4dp"
-                android:layout_marginEnd="@dimen/dimen_8dp"
-                android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll_writer">
+                android:layout_marginStart="@dimen/dimen_2dp"
+                android:layout_weight="2"
+                android:text="@string/name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tv_name_studio_detail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/studio"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/tv_studio_detail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_2dp"
-                    android:layout_weight="2"
-                    android:text="@string/name"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_writer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_name_writer_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/writer"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_writer_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_2dp"
+                android:layout_weight="2"
+                android:text="@string/name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-    </ScrollView>
+        <LinearLayout
+            android:id="@+id/ll_studio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_8dp"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:gravity="center">
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/tv_name_studio_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/studio"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_studio_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_2dp"
+                android:layout_weight="2"
+                android:text="@string/name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:visibility="visible"
+            android:orientation="vertical">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>

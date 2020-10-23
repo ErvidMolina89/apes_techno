@@ -12,8 +12,11 @@
         tools:layout="@layout/fragment_home_movies" >
         <action
             android:id="@+id/action_detail_movie"
-            app:destination="@id/navigation_detail_movie">
-        </action>
+            app:destination="@id/navigation_detail_movie"
+            app:enterAnim="@anim/fadein"
+            app:exitAnim="@anim/fadein_out"
+            app:popEnterAnim="@anim/fadein"
+            app:popExitAnim="@anim/fadein_out"></action>
     </fragment>
 
     <fragment
