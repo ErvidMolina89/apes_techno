@@ -10,7 +10,7 @@ import com.example.apes_techno.Connection.Resources.Services
 import com.example.apes_techno.DataAccess.Connection.Handler.Interfaces.IRetrofitParcelable
 import com.example.apes_techno.Models.BaseModel
 import com.example.apes_techno.Models.MessageResponse
-import com.example.apes_techno.Models.Movie
+import com.example.apes_techno.DataAccess.DBLocal.ModelsDB.Movie
 import com.example.apes_techno.Models.Movies
 import com.example.apes_techno.Presentations.Fragments.FragmentDetails.Interfaces.IFragmentDetailsMoviePresenter
 import com.example.apes_techno.Presentations.Fragments.FragmentDetails.Interfaces.IFragmentDetailsMovieView
@@ -76,8 +76,12 @@ class DetailsMovieFragment : BaseFragment() {
     private fun visualizarMovie(item: Movie){
         iv_detail_movie.showImage(item.image?.original_url)
         tv_name_detail.text         = item.name
-        val date = item.release_date?.split(" ")
-        tv_date_detail.text         = date!![0]
+        var date = ""
+            if(item.release_date != null){
+            val date1 = item.release_date?.split(" ")
+                date = date1!![0]
+        }
+        tv_date_detail.text         = date
         tv_rating_detail.text       = item.rating
         tv_runtime_detail.text      = item.runtime
         tv_budget_detail.text       = item.budget

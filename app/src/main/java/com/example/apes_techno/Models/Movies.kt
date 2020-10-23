@@ -1,5 +1,7 @@
 package com.example.apes_techno.Models
 
+import com.example.apes_techno.DataAccess.DBLocal.ModelsDB.Movie
+
 class Movies : BaseModel() {
 
     var limit                   : Int? = null

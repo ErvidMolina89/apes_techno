@@ -24,7 +24,7 @@ class RepoService (context: Context) {
             }
             .withListenerOfFailure { titulo, message ->
                 val mess = MessageResponse()
-                mess.Code = titulo
+                mess.Code = titulo.toString()
                 mess.Message = message
                 responder.onFailedResponse(mess, service)
             }

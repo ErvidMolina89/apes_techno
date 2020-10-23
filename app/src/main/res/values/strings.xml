@@ -11,7 +11,7 @@
     <string name="descripcion">Descripción</string>
     <string name="api_key">"api_key=b6bd313da96a3c6ceddae3afe0253db9685ddf9e&amp;format=json"</string>
     <string name="Internet">Internet</string>
-    <string name="detail_falla_Internet">No tienes acceso a Internet, verifica</string>
+    <string name="detail_falla_Internet">No tienes acceso a Internet y tu base de datos esta vacia</string>
     <string name="btn_aceptar">Aceptar</string>
     <string name="btn_cancel">Cancelar</string>
     <string name="informative">Informativo</string>

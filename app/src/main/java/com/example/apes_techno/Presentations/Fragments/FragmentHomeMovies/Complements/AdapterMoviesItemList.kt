@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.apes_techno.Models.Movie
+import com.example.apes_techno.DataAccess.DBLocal.ModelsDB.Movie
 import com.example.apes_techno.R
 
 

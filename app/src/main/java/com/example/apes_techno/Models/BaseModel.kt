@@ -10,7 +10,6 @@ import com.google.gson.Gson
 open class BaseModel:
 
     IRetrofitParcelable {
-        var id                  : Int? = null
 
         companion object {
             fun objectFromJson(json: String, type: Class<out BaseModel>): BaseModel? {

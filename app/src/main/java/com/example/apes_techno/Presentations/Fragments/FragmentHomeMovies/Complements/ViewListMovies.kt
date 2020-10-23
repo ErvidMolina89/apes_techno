@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apes_techno.Base.App
-import com.example.apes_techno.Models.Movie
+import com.example.apes_techno.DataAccess.DBLocal.ModelsDB.Movie
 import com.example.apes_techno.R
 
 class ViewListMovies @JvmOverloads constructor(

@@ -4,10 +4,11 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import com.example.apes_techno.Models.Movie
+import com.example.apes_techno.DataAccess.DBLocal.ModelsDB.Movie
 import com.example.apes_techno.R
 import com.example.apes_techno.Util.showImage
 import de.hdodenhof.circleimageview.CircleImageView
@@ -23,7 +24,7 @@ class ViewItemListMovies @JvmOverloads constructor(
     }
 
     private var cardView        : CardView ?= null
-    private var image           : CircleImageView?= null
+    private var image           : ImageView?= null
     private var nameMovie       : TextView ?= null
     private var dateMovie       : TextView ?= null
     private var runtimeMovie    : TextView ?= null
@@ -42,7 +43,7 @@ class ViewItemListMovies @JvmOverloads constructor(
         }
     }
 
-    private var item : Movie ?= null
+    private var item : Movie?= null
     fun conItem(item : Movie): ViewItemListMovies {
         this.item = item
         return this

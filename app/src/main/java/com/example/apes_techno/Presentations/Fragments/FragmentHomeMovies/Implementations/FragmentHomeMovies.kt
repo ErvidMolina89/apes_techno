@@ -8,10 +8,10 @@ import androidx.navigation.fragment.findNavController
 import com.example.apes_techno.Base.App
 import com.example.apes_techno.Base.BaseFragment
 import com.example.apes_techno.Connection.Resources.Services
+import com.example.apes_techno.DataAccess.DBLocal.ModelsDB.Movie
 import com.example.apes_techno.DataAccess.Connection.Handler.Interfaces.IRetrofitParcelable
 import com.example.apes_techno.Models.BaseModel
 import com.example.apes_techno.Models.MessageResponse
-import com.example.apes_techno.Models.Movie
 import com.example.apes_techno.Models.Movies
 import com.example.apes_techno.Presentations.Fragments.FragmentHomeMovies.Complements.ViewListMovies
 import com.example.apes_techno.Presentations.Fragments.FragmentHomeMovies.Interfaces.IFragmentHomeMoviesPresenter

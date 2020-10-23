@@ -2,10 +2,10 @@ package com.example.apes_techno.Presentations.Fragments.FragmentHomeMovies.Imple
 
 import android.content.Context
 import com.example.apes_techno.Connection.Resources.Services
+import com.example.apes_techno.DataAccess.DBLocal.ModelsDB.Movie
 import com.example.apes_techno.DataAccess.Connection.Handler.Interfaces.IRetrofitParcelable
 import com.example.apes_techno.Models.BaseModel
 import com.example.apes_techno.Models.MessageResponse
-import com.example.apes_techno.Models.Movie
 import com.example.apes_techno.Presentations.Fragments.FragmentHomeMovies.Interfaces.*
 
 class FragmentHomeMoviesPresenter (context: Context, view : IFragmentHomeMoviesView):
